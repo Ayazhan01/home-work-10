@@ -1,0 +1,22 @@
+<body>
+    <header class="container">
+        <div class="header__content">
+            <h1 class="header__logo">MovieApp</h1>
+            <form>
+                <input type="text" class="header__search" placeholder="Поиск" />
+            </form>
+        </div>
+    </header>
+    <div class="movie-container">
+        <div *ngFor="let movie of movies" class="movie-card">
+            <img [src]="'assets/movie-covers/' + movie.img" alt="{{ movie.name }}">
+            <h2>{{ movie.name }}</h2>
+            <p>{{ movie.description }}</p>
+            <ul>
+                <li *ngFor="let genre of movie.genres">{{ genre }}</li>
+            </ul>
+            <p>Rating: {{ movie.rate }}</p>
+            <p>Length: {{ movie.length }}</p>
+        </div>
+    </div>
+</body>
